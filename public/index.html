@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flappy Shopper</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      height: 100%;
+    }
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #87cefa; /* light sky blue */
+    }
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      visibility: hidden;
+    }
+    #overlay.visible {
+      visibility: visible;
+    }
+    .button {
+      background: #ff6a00;
+      color: #ffffff;
+      padding: 10px 20px;
+      margin: 8px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .input-group {
+      margin: 8px 0;
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-group label {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .input-group input {
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+      font-size: 16px;
+    }
+    .scoreboard {
+      width: 100%;
+      max-width: 320px;
+      margin-top: 16px;
+    }
+    .scoreboard table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #ffffff;
+    }
+    .scoreboard th,
+    .scoreboard td {
+      padding: 4px 8px;
+      text-align: left;
+    }
+    .scoreboard tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div id="overlay"></div>
+  </div>
+  <!-- compiled game script -->
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
